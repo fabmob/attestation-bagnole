@@ -24,11 +24,11 @@ const generateQR = async (text) => {
   }
 }
 
-function pad(str) {
+function pad (str) {
   return String(str).padStart(2, '0')
 }
 
-function getFormattedDate(date) {
+function getFormattedDate (date) {
   const year = date.getFullYear()
   const month = pad(date.getMonth() + 1) // Les mois commencent à 0
   const day = pad(date.getDate())
@@ -37,7 +37,7 @@ function getFormattedDate(date) {
 
 document.addEventListener('DOMContentLoaded', setReleaseDateTime)
 
-function setReleaseDateTime() {
+function setReleaseDateTime () {
   const releaseDateInput = $('#field-datesortie')
   const loadedDate = new Date()
   releaseDateInput.value = getFormattedDate(loadedDate)
@@ -49,7 +49,7 @@ function setReleaseDateTime() {
   releaseTimeInput.value = `${hour}:${minute}`
 }
 
-function getProfile() {
+function getProfile () {
   const fields = {}
   for (const field of $$('#form-profile input')) {
     if (field.id === 'field-datesortie') {
@@ -64,7 +64,7 @@ function getProfile() {
   return fields
 }
 
-function idealFontSize(font, text, maxWidth, minSize, defaultSize) {
+function idealFontSize (font, text, maxWidth, minSize, defaultSize) {
   let currentSize = defaultSize
   let textWidth = font.widthOfTextAtSize(text, defaultSize)
 
@@ -75,7 +75,7 @@ function idealFontSize(font, text, maxWidth, minSize, defaultSize) {
   return textWidth > maxWidth ? null : currentSize
 }
 
-async function generatePdf(profile, reasons) {
+async function generatePdf (profile, reasons) {
   const creationInstant = new Date()
   const creationDate = creationInstant.toLocaleDateString('fr-FR')
   const creationHour = creationInstant
@@ -147,7 +147,7 @@ async function generatePdf(profile, reasons) {
   if (!locationSize) {
     alert(
       'Le nom de la ville risque de ne pas être affiché correctement en raison de sa longueur. ' +
-        'Essayez d\'utiliser des abréviations ("Saint" en "St." par exemple) quand cela est possible.'
+        'Essayez d\'utiliser des abréviations ("Saint" en "St." par exemple) quand cela est possible.',
     )
     locationSize = 7
   }
@@ -190,7 +190,7 @@ async function generatePdf(profile, reasons) {
   return new Blob([pdfBytes], { type: 'application/pdf' })
 }
 
-function downloadBlob(blob, fileName) {
+function downloadBlob (blob, fileName) {
   const link = document.createElement('a')
   const url = URL.createObjectURL(blob)
   link.href = url
@@ -199,7 +199,7 @@ function downloadBlob(blob, fileName) {
   link.click()
 }
 
-function getReasons() {
+function getReasons () {
   const values = $$('input[name="field-reason"]:checked')
     .map((x) => x.value)
     .join('-')
@@ -207,7 +207,7 @@ function getReasons() {
 }
 
 // see: https://stackoverflow.com/a/32348687/1513045
-function isFacebookBrowser() {
+function isFacebookBrowser () {
   const ua = navigator.userAgent || navigator.vendor || window.opera
   return ua.includes('FBAN') || ua.includes('FBAV')
 }
@@ -219,7 +219,7 @@ if (isFacebookBrowser()) {
   alertFacebookElt.classList.remove('d-none')
 }
 
-function addSlash() {
+function addSlash () {
   const birthdayInput = $('#field-birthday')
   birthdayInput.value = birthdayInput.value
     .replace(/^(\d{2})$/g, '$1/')
@@ -241,7 +241,7 @@ const snackbar = $('#snackbar')
 
 $('#generate-btn').addEventListener('click', async (event) => {
   alert(
-    "Désolé, la génération de PDF n'est pas encore développée. Cela dit, on a mis sur le coup un consortium d'organisations et industriels au top niveau."
+    "Désolé, le Ministère du Monde d'Après n'est pas encore vraiment tout à fait en place. En attendant, rejoignez la Fabrique des Mobilités (lien en bas de page) !",
   )
   return null
   event.preventDefault()
@@ -316,7 +316,7 @@ const conditions = {
   },
 }
 
-function validateAriaFields() {
+function validateAriaFields () {
   return Object.keys(conditions)
     .map((field) => {
       if (conditions[field].condition === 'pattern') {
@@ -344,8 +344,8 @@ function validateAriaFields() {
     .some((x) => x === 1)
 }
 
-;(function addVersion() {
+;(function addVersion () {
   document.getElementById(
-    'version'
+    'version',
   ).innerHTML = `${new Date().getFullYear()} - ${process.env.VERSION}`
 })()
