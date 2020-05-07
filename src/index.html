@@ -39,8 +39,7 @@
 					display: block;
 					line-height: 2rem;
 					">Ministère du Monde d'Après</div>
-			<ul style="list-style-type: none; padding: .6rem .1rem .4rem; font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; font-weight: 400; line-height: 1.2rem"><li>Liberté</li><li>Égalité</li><li>Fraternité</li></ul>
-
+			<ul style="list-style-type: none; padding: .6rem .1rem .4rem; font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; font-weight: 400; line-height: 1.2rem"><li>Liberté</li><li>Égalité</li><li>Fraternité et sororité</li></ul>
 
         <div>
             <h1 class="flex flex-wrap">
@@ -64,7 +63,7 @@
     <div class="wrapper">
 
         <form id="form-profile" accept-charset="UTF-8">
-            <h2 class="titre-2">Remplissez en ligne votre attestation bagnole numérique :</h2>
+            <h2 class="titre-2">Remplissez en ligne votre attestation numérique de déplacement en bagnole :</h2>
             <p class="text-alert">Tous les champs sont obligatoires.</p>
             
             <div class="form-group">
@@ -208,31 +207,31 @@
                 <legend class="titre-3">Choisissez le ou les motif(s) de sortie en bagnole</legend>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="field-reason" id="checkbox-1" value="travail">
-                    <label class="form-check-label" for="checkbox-1">J'habite trop loin du boulot (et c'est compliqué de déménager, surtout en ce moment) ou de ma destination pour ce trajet. Le vélo, les trottinettes c'est bien, mais pas 40km par jour.</label>
+                    <label class="form-check-label" for="checkbox-1">J'habite trop loin du boulot (et c'est compliqué de déménager, surtout en ce moment) ou de ma destination pour ce trajet. La marche, le vélo, les trottinettes c'est bien, mais pas 40km par jour.</label>
                 </div>
     
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="field-reason" id="checkbox-2" value="travail">
-                    <label class="form-check-label" for="checkbox-2">J'aimerais faire mon trajet à vélo, mais le chemin est trop dangereux : ma collectivité n'a pas construit assez de voies prioritaires pour le vélo.</label>
+                    <label class="form-check-label" for="checkbox-2">J'aimerais faire mon trajet à vélo*, mais le chemin est trop dangereux : ma collectivité n'a pas construit assez de voies prioritaires pour le vélo*.</label>
                 </div>
     
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="field-reason" id="checkbox-courses" value="courses">
-                    <label class="form-check-label" for="checkbox-courses">J'ai peur de laisser mon vélo au boulot toute la journée : mon employeur ne m'a pas mis à disposition de garage.</label>
+                    <label class="form-check-label" for="checkbox-courses">J'ai peur de laisser mon vélo* au boulot toute la journée : mon employeur ne m'a pas mis à disposition de garage.</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="field-reason" id="checkbox-courses" value="courses">
-                    <label class="form-check-label" for="checkbox-courses">J'ai peur de laisser mon vélo dans ma rue toute la nuit : je vis dans un appartement non équipé en garage vélo.</label>
+                    <label class="form-check-label" for="checkbox-courses">J'ai peur de laisser mon vélo* dans ma rue toute la nuit : je vis dans un appartement non équipé en garage vélo*.</label>
                 </div>
                 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="field-reason" id="checkbox-sante" value="sante">
-                    <label class="form-check-label" for="checkbox-sante">Je ne peux pas faire du vélo pour des raisons de santé.</label>
+                    <label class="form-check-label" for="checkbox-sante">Je ne peux pas faire du vélo* pour des raisons de santé.</label>
                 </div>
                 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="field-reason" id="checkbox-sante-velo" value="sante-velo">
-					<label class="form-check-label" for="checkbox-sante-velo">J'ai un vélo, mais c'est lui qui a des problèmes de santé. Je n'ai pas eu le temps encore de le réparer mais je vais le faire, au moins avec les <a href="https://coupdepoucevelo.fr/" target="_blank">50€ offerts par le gouvernement</a>, c'est abusé de laisser un vélo moisir dans un garage.</label>
+					<label class="form-check-label" for="checkbox-sante-velo">J'ai un vélo*, mais c'est lui qui a des problèmes de santé. Je n'ai pas eu le temps encore de le réparer mais je vais le faire, au moins avec les <a href="https://coupdepoucevelo.fr/" target="_blank">50€ offerts par le gouvernement</a>, c'est abusé de laisser un vélo* moisir dans un garage.</label>
                 </div>
                 <div class="form-check">
 						<input onClick="((event) => {alert('Cette case était un piège, pas de bol. C\'est une des nombreuses infox de notre Raoult national donc pas une dérogation possible'); event.preventDefault();})(event)" class="form-check-input" type="checkbox" name="field-reason" id="checkbox-raoult" value="sante-raoult">
@@ -240,6 +239,7 @@
                 </div>
                 
             </fieldset>
+			<p><em>* Nous avons pris l'exemple du vélo, mais toutes ces autres formes de mobilités sont bien sûr valables : marche ou course à pied, vélo à assistance électrique, roller, pédalo, hoverboard...</em><p/>
             
             <div class="form-group">
                 <label for="field-datesortie">Date de sortie</label>
@@ -277,9 +277,15 @@
     </div>
     </main>
     <footer role="contentinfo" class="main-footer">
-        <div class="footer-links">
-				<div class="footer-line">Mentions légales : ce site est une blague, voilà, c'est tout.</div>
-        </div>
+				<div style="color: #aaa;" >Mentions légales : ce site est une blague.</div>
+		<div ><p>Mais si vous voulez imaginer avec nous les mobilités du monde d'après, <a href="https://wiki.lafabriquedesmobilites.fr">rejoignez-nous.</a></p> 
+
+				<div>
+		<a href="https://wiki.lafabriquedesmobilites.fr">
+			<img src="https://imgur.com/WqEkaCs.png" width="160px"/>
+		</a>
+				</div>
+	</div>
     </footer> 
 
     <div class="alert  alert-info  d-none" id="update-alert">
