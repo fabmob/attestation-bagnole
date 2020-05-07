@@ -377,7 +377,7 @@ input:valid + span:after {
   flex-direction: column;
 }
 .main-footer > div {
-  max-width: 45rem;
+  max-width: 35rem;
   text-align: center;
   margin: 0 auto;
   text-align: center;
